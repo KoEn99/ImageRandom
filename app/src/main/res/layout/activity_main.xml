@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.activity.MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="640px"
-        android:layout_height="640px"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+        tools:listitem="@layout/recycle_image_item"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>

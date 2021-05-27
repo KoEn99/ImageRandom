@@ -11,6 +11,8 @@ interface ImageApi {
     fun getImageList(
         @Query("key") key: String,
         @Query("q") param: String,
-        @Query("image_type") imageType:String
+        @Query("image_type") imageType:String,
+        @Query("per_page") pagePer:Int,
+        @Query("page") page:Int
     ): Observable<RequestDao>
 }

@@ -10,13 +10,19 @@ class ImageListPresenter @Inject constructor(var imageService: ImageService) : B
     override fun getListRandomImage() {
 
     }
-
+    var page = 1
     override fun getOneImage() {
         imageService.attachPresenter(this)
-        imageService.getListImage()
+        imageService.getListImage("Biomutant", page, 200)
     }
-
+    var list:ArrayList<ImageDao> = ArrayList()
     override fun completeImage(hits: List<ImageDao>) {
-        view?.displayImage(hits[0].webformatURL)
+        /*for (i in hits){
+            list.add(i)
+        }
+        if (list.size < 600)  {
+            page++
+            imageService.getListImage("yellow+flowers", page, 200)*/
+        view?.displayListImage(hits)
     }
 }

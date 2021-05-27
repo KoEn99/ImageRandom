@@ -8,7 +8,7 @@ import com.koen.imagerandom.ui.view.BaseView
 interface MainActivityContract {
     interface View: BaseView{
         fun displayImage(str:String)
-        fun displayListImage()
+        fun displayListImage(imageList: List<ImageDao>)
     }
     interface Presenter: BasePresenter<View>{
         fun getListRandomImage()
@@ -16,7 +16,7 @@ interface MainActivityContract {
         fun completeImage(hits:List<ImageDao>)
     }
     interface Service: BaseService<Presenter>{
-        fun getListImage()
+        fun getListImage(search:String, page:Int, pagePer:Int)
         fun getImage()
     }
 }

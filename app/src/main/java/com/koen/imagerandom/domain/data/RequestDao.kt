@@ -1,3 +1,3 @@
 package com.koen.imagerandom.domain.data
 
-data class RequestDao(var hits: List<ImageDao>)
+data class RequestDao(val total:Long, val totalHits:Long ,var hits: List<ImageDao>)

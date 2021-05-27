@@ -9,8 +9,8 @@ import javax.inject.Inject
 class ImageService @Inject constructor(var imageApi: ImageApi) :
     BaseServiceImpl<MainActivityContract.Presenter>(),
     MainActivityContract.Service {
-    override fun getListImage() {
-        imageApi.getImageList("21810552-7c96cc705e047c7f3d35a1017", "car", "photo")
+    override fun getListImage(search: String, page: Int, pagePer: Int) {
+        imageApi.getImageList("21810552-7c96cc705e047c7f3d35a1017", search, "photo", pagePer, page)
             .subscribeOn(Schedulers.io())
             //  .delay(10, TimeUnit.SECONDS)
             .observeOn(AndroidSchedulers.mainThread())
